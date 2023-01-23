@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}", type="module"></script>
+    <title>Flask Prova</title>
+</head>
+<body>
+    <div class="container">
+        <main>
+            <div class="left">
+
+            </div>
+
+            <div class="right">
+                
+                <div class="shopping-list">
+                    <div class="top">
+                        <ul>
+                            {% for post in posts %}
+                            <li data-id="{{ post.id }}">{{ post.item }} <button>x</button></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="bott">
+                        <input type="text" name="articolo" id="articolo">
+                        <button>Add Item</button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="credits">
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>

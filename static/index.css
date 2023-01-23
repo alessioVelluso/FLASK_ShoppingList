@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+}
+
+
+
+main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+}
+.left, .right { 
+    width: 50%; 
+    height: 100%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.shopping-list {
+    height: 90%;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+}
+.shopping-list .top {
+    width: 100%;
+    height: 90%;
+    background-color: rgb(52, 145, 145);
+    border-radius: 15px 15px 0 0;
+
+    padding: 1rem;
+}
+.top ul {
+    margin: 0.5rem 2rem;
+    
+}
+.top ul li {
+    font-size: 1.5rem;
+    position: relative;
+    
+    list-style: none;
+    display: flex;
+    margin-bottom: 1rem;
+}
+.top ul li button {
+    position: relative;
+
+    height: 1.5rem;
+    width: 1.5rem;
+
+    padding: 2px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 100, 100, 0.8);
+    color: white;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 1.2rem;
+}
+
+
+.shopping-list .bott {
+    height: 10%;
+    width: 100%;
+    background-color: pink;
+    border-radius: 0 0 15px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input#articolo {
+    flex-grow: 1;
+    height: 2rem;
+    margin: 0 1rem 0 2rem;
+}
+.bott button {
+    height: 2rem;
+    padding: 0.2rem 1rem;
+    margin: 0 2rem 0 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.credits {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
