@@ -4,7 +4,7 @@ const deleteButton = async e => {
 
 
     const button = e.target;
-    const id = button.parentElement.attributes['data-id'].value
+    const id = button.parentElement.parentElement.attributes['data-id'].value
     
     try {
 
@@ -47,15 +47,11 @@ const addItem = async () => {
             else {
                 const responseContent = await res.json()
 
-                const list = document.querySelector('.top ul');
                 const newLi = document.createElement('li');
-                newLi.innerHTML = input.value;
-                newLi.setAttribute('data-id', responseContent.id)
+                newLi.innerHTML = input.value + '<div><button>x</button></div>';
+                newLi.setAttribute('data-id', responseContent.id);
 
-                const removeBtn = document.createElement('button');
-                removeBtn.innerHTML = 'x';
-
-                newLi.appendChild(removeBtn)
+                const list = document.querySelector('.top ul');
                 list.appendChild(newLi);
 
                 input.value = '';

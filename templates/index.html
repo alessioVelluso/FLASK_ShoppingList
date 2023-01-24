@@ -13,7 +13,10 @@
     <div class="container">
         <main>
             <div class="left">
-
+                <h1>My Shopping list!</h1>
+                <p>Just a simple shopping list to try flask for a bigger project.<br>
+                You can see how i build this web app by reading the documentation.<br>
+                You can find it <a href="">HERE</a>.</p>
             </div>
 
             <div class="right">
@@ -22,7 +25,7 @@
                     <div class="top">
                         <ul>
                             {% for post in posts %}
-                            <li data-id="{{ post.id }}">{{ post.item }} <button>x</button></li>
+                            <li data-id="{{ post.id }}">{{ post.item }} <div><button>x</button></div></li>
                             {% endfor %}
                         </ul>
                     </div>

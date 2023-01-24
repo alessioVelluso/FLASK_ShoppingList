@@ -48,6 +48,24 @@ main {
     justify-content: center; 
     align-items: center;
 }
+.left { flex-direction: column;}
+.left h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+.left p {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+
+    background-color: rgba(0,0,0,0.2);
+    width: 80%;
+    border-radius: 15px;
+}
+.left a {
+    color: #1d2a8f;
+}
 
 
 
@@ -99,23 +117,26 @@ main {
     background-color: black;
     border-radius: 15px 15px 0 0;
 
-    padding: 1rem;
     position: relative;
+    overflow-y: scroll;
 }
 .shopping-list .top::after {
-    position: absolute;
+    display: inline-block;
+    position: sticky;
     content: '';
     inset: 0;
     height: 100%;
     width: 100%;
     
     background-image: url('./wa.png');
+    background-position: center center;
+    background-size: cover;
     opacity: 0.2;
 }
 
 
 .top ul {
-    margin: 0.5rem 2rem;
+    margin: 1.5rem 3rem;
     
 }
 .top ul li {
@@ -125,6 +146,13 @@ main {
     list-style: none;
     display: flex;
     margin-bottom: 1rem;
+}
+.top ul li div {
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .top ul li button {
     position: relative;
@@ -146,6 +174,27 @@ main {
 
     margin-left: 1.2rem;
 }
+
+
+
+
+.shopping-list .top::-webkit-scrollbar {width: 12px;}
+/* Track */
+.shopping-list .top::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+/* Handle */
+.shopping-list .top::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(100, 100, 100, 0.4); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.shopping-list .top::-webkit-scrollbar-thumb:window-inactive {background: rgba(100, 100, 100, 0.4); }
+
+
 
 
 .shopping-list .bott {
