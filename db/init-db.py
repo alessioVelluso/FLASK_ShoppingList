@@ -1,7 +1,7 @@
 import sqlite3
 import textwrap
 
-connection = sqlite3.connect('database.db')
+connection = sqlite3.connect('db/database.db')
 
 
 sqlCommand = """
@@ -15,8 +15,6 @@ sqlCommand = """
     );
 """
 sqlCommand = textwrap.indent(sqlCommand, '  ')
-
-
 
 
 

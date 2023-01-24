@@ -16,6 +16,10 @@ def index():
     posts = conn.execute('SELECT * FROM posts')
     return render_template('index.html', posts=posts)
 
+@app.route('/doc')
+def doc():
+    return 'Helloooooooo!'
+
 
 
 
@@ -24,6 +28,7 @@ def delete_item(id):
     conn = sqlite3.connect('db/database.db')
     conn.execute('DELETE FROM posts WHERE id = ?', (id,))
     conn.commit()
+    conn.close()
     return 'Message deleted succesfully'
 
 
@@ -34,9 +39,23 @@ def delete_item(id):
 def add_item():
     conn = sqlite3.connect('db/database.db')
     item = request.json['item']
+    #seleziona il database, e immagazzina il playload desiderato in una var
+
     cursor = conn.cursor()
     cursor.execute("INSERT INTO posts (item) VALUES (?)", (item,))
     cursor.execute("SELECT last_insert_rowid()")
     conn.commit()
-    item_id = cursor.fetchone()[0]
+    #crea un cursore per permettere più comandi sql insieme e commit everything
+
+    item_id = cursor.fetchone()[0] 
+    # sintassi utilizzata per recuperare una singola riga di risultati da una query SQL eseguita tramite un cursore.
+    
+    conn.close()
     return jsonify({'id': item_id, 'message': 'Message added succesfully'})
+    
+#BELLISSIMO ESEMPIO DI API CHE:
+#ASCOLTA LA RICHIESTA MANDATA ALL'INDIRIZZO
+#ITERA ATTRAVERSO UNA SELEZIONE PER RESTITUIRE UN DATO (in questo esempio in
+    # realtà non itera ma l'accoppiata "SELECT last_insert_rowid()" è il
+    # parallelo con $rows=mysqli_row())
+#RESTITUISCE UNA RISPOSTA CHE VERRà ASCOLTATA DA JS
