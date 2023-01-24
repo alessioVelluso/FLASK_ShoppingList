@@ -7,6 +7,12 @@ import os
 app = Flask(__name__)
 
 
+def custom_render_template(template_name):
+    with open(template_name, 'r', encoding='utf-8') as template_file:
+        template = template_file.read()
+    return template
+
+
 
 
 @app.route('/')
@@ -18,7 +24,7 @@ def index():
 
 @app.route('/doc')
 def doc():
-    return 'Helloooooooo!'
+    return custom_render_template('templates/DOC.html')
 
 
 
