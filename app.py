@@ -65,3 +65,6 @@ def add_item():
     # realtà non itera ma l'accoppiata "SELECT last_insert_rowid()" è il
     # parallelo con $rows=mysqli_row())
 #RESTITUISCE UNA RISPOSTA CHE VERRà ASCOLTATA DA JS
+
+
+if __name__ == '__main__': app.run(port=8000)
