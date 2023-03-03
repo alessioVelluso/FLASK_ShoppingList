@@ -59,7 +59,7 @@ def add_item():
     conn.close()
     return jsonify({'id': item_id, 'message': 'Message added succesfully'})
     
-#BELLISSIMO ESEMPIO DI API CHE:
+#ESEMPIO DI API CHE:
 #ASCOLTA LA RICHIESTA MANDATA ALL'INDIRIZZO
 #ITERA ATTRAVERSO UNA SELEZIONE PER RESTITUIRE UN DATO (in questo esempio in
     # realtà non itera ma l'accoppiata "SELECT last_insert_rowid()" è il
